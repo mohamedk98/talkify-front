@@ -1,0 +1,22 @@
+<div class="">
+  <div *ngFor="let message of messageList" class="list-none bg-white flex flex-col items-start justify-start">
+    <li>
+      {{ message }}
+    </li>
+  </div>
+
+  <div class="flex flex-row gap-x-2 m-4">
+    <button class="">🤭</button>
+    <input
+      class="w-full text-gray-700 rounded-lg focus:border-red-500"
+      [(ngModel)]="newMessage"
+      (keyup)="$event.keyCode == 13 && sendMessage()"
+    />
+    <button
+      class="rounded-full border-green-500 bg-green-200"
+      (click)="sendMessage()"
+    >
+      ✉ 
+    </button>
+  </div>
+</div>
